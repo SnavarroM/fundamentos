@@ -1,0 +1,22 @@
+{% extends "base.html" %} 
+
+{% block title %}
+  Actualizacion
+{% endblock title %}
+
+{% block content %}
+
+<form method="POST">
+  {% csrf_token %}
+ 
+      {{form.title}}
+  
+  
+    {{form.content}}
+  
+  <button type="submit" class="btn btn-primary">Actualizar</button>
+</form>
+
+<a href="{% url 'blog:home' %}">Volver</a>
+{% endblock content %}
+

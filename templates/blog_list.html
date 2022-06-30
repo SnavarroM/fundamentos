@@ -1,12 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Blog</h1>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}
+  Blog
+{% endblock title %}
+    
+{% block content %}
+
+
+{% for post in posts  %}
+<a href="{% url 'blog:detail' post.id%}"> {{post.title}} </a> 
+<a href="{% url 'blog:update' post.id %}"> update</a>
+<a href="{% url 'blog:delete' post.id %}">Eliminar</a>
+ <br>
+{% endfor %}
+
+
+<br>
+<a class="bg-blue-300 px-4 py-3 rounded" href="{% url 'blog:create' %}">Create</a>
+<a class="bg-orange-300 px-4 py-3 rounded" href="{% url 'home' %}">Home</a>
+{% endblock content %}
+
+  

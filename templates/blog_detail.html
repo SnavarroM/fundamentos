@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Detalle del Blog
+{% endblock title %}
+    
+{% block content %}
+
+{{post.title}}
+<br>
+{{post.content}}
+<br>
+<a href="{% url 'blog:home' %}">Home</a>
+{% endblock content %}
